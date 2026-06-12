@@ -1,7 +1,21 @@
 import React from "react";
 import logo from "../../assets/amazonlogo.png";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-function Login() {
+function Login(){
+
+  const [email, setEmail] = useState('');
+  const navigate = useNavigate();
+  
+  function handleContinue(){
+    navigate("/signup",{
+      state: {
+        email : email
+      }
+    })
+  }
+
   return (
     <>
       <div className="min-h-screen items-center flex flex-col">
@@ -16,6 +30,8 @@ function Login() {
         <div className="p-3">
           <h3 className="font-bold">Enter mobile number or email</h3>
           <input
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
             className="shadow-[inset_0_1px_2px_rgba(0,0,0,0.2)] border-[1px] border-black/30 rounded-sm w-full h-[50px] p-2"
             type="text"
             name=""
@@ -24,7 +40,7 @@ function Login() {
         </div>
 
         <div className="p-3 flex justify-center">
-          <button className="border-none bg-yellow-300  rounded-full w-full h-[50px]">
+          <button onClick={handleContinue} className="border-none bg-yellow-300  rounded-full w-full h-[50px]">
             Continue
           </button>
         </div>
