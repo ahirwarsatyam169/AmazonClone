@@ -22,7 +22,7 @@ function Login(){
         <div className="bg-[#232F3E] h-[50px] flex w-full">
           <img className="scale-50  -translate-x-8 " src={logo} alt="amazon" />
         </div>
-        <div className="w-full max-w-md border mt-2 " >
+        <div className="w-full max-w-md  mt-2 " >
         <div className="p-3">
           <h2 className="text-xl font-bold">Sign in or create account</h2>
         </div>

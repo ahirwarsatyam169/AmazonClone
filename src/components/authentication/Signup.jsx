@@ -7,10 +7,15 @@
     const location = useLocation();
     const email = location.state?.email || ''; //If state exists, get email. Otherwise return undefined
     const navigate = useNavigate();
-
+    const create = useNavigate();
     function navigatelogin(){
       navigate("/")
     }
+    function createbutton(){
+      navigate("/createacc")
+    }
+
+
     // const email = location.state.email;
     return (
       <>
@@ -33,7 +38,7 @@
             </div>
 
             <div className="p-3 flex justify-center">
-              <button className="border-none bg-yellow-300  rounded-full w-full h-[50px]">
+              <button onClick={()=>createbutton()} className="border-none bg-yellow-300  rounded-full w-full h-[50px]">
                 Proceed to create an account
               </button>
             </div>
