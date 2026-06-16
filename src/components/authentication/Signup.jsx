@@ -14,6 +14,11 @@
     function createbutton(){
       navigate("/createacc")
     }
+    const gohome = useNavigate();
+      
+    function redirecthome(){
+      gohome("/home")
+    }
 
 
     // const email = location.state.email;
@@ -21,7 +26,7 @@
       <>
         <div className="min-h-screen items-center flex flex-col">
           <div className="bg-[#232F3E] h-[50px] flex w-full">
-            <img className="scale-50  -translate-x-8 " src={logo} alt="amazon" />
+            <img onClick={redirecthome} className="scale-50  -translate-x-8 " src={logo} alt="amazon" />
           </div>
           <div className="w-full max-w-md ">
             <div className="p-3">

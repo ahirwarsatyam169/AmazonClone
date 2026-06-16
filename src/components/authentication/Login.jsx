@@ -4,7 +4,12 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function Login(){
-
+    const gohome = useNavigate();
+  
+    function redirecthome(){
+      gohome("/home")
+    }
+  
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
   
@@ -16,11 +21,13 @@ function Login(){
     })
   }
 
+
+
   return (
     <>
       <div className="min-h-screen items-center flex flex-col ">
         <div className="bg-[#232F3E] h-[50px] flex w-full">
-          <img className="scale-50  -translate-x-8 " src={logo} alt="amazon" />
+          <img onClick={redirecthome} className="scale-50  -translate-x-8 " src={logo} alt="amazon" />
         </div>
         <div className="w-full max-w-md  mt-2 " >
         <div className="p-3">

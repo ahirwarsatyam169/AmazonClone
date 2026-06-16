@@ -1,12 +1,21 @@
 import React from "react";
 import logo from "../../assets/amazonlogo.png";
+import { useNavigate } from "react-router-dom";
 
 function CreateAcc() {
+  const gohome = useNavigate();
+
+  function redirecthome(){
+    gohome("/home")
+  }
+
+
+
   return (
     <>
       <div className="min-h-screen items-center flex flex-col">
         <div className="bg-[#232F3E] h-[50px] flex w-full">
-          <img className="scale-50  -translate-x-8 " src={logo} alt="amazon" />
+          <img onClick={redirecthome} className="scale-50  -translate-x-8 " src={logo} alt="amazon" />
         </div>
         <div className="w-full max-w-md">
           <h1 className="text-xl ml-3 mt-4 font-bold">Create Account</h1>
