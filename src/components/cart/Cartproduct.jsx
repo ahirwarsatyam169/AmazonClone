@@ -3,10 +3,16 @@ import React from "react";
 function Cartproduct() {
   return (
     <>
-      <div>Cartproduct</div>
-      <div className="">
+      <div className="border rounded-xl h-full">
         <div>
-          <h1>Your shopping cart is empty</h1>
+          <img src={null} alt="product" />
+          <div>
+            
+          </div>
+        </div>
+
+        <div>
+          <h2></h2>
         </div>
       </div>
     </>

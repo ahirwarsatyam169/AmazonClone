@@ -16,7 +16,7 @@ function Productsgrid() {
   return (
     <>
     <div className='grid grid-cols-2 gap-4 m-2 md:grid-cols-5 sm:grid-cols-3'>
-        {products.map(products => (
+        {products.slice(0, 50).map(products => (
             <Productcard
                 
                 key={products.id}

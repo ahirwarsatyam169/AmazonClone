@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Productcard({title, price, thumbnail}) {
+function Productcard({title, price, thumbnail, Productcard}) {
   return (
     
       <div className="border rounded-xl p-2 flex flex-col">
