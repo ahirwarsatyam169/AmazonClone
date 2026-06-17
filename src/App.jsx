@@ -4,7 +4,8 @@ import Login from './components/authentication/Login'
 import Signup from './components/authentication/Signup'
 import CreateAcc from './components/authentication/CreateAcc'
 import Home from './components/Homepage/Home'
-
+import Cart from './components/cart/cart'
+import Profilepage from './components/profile/Profilepage'
 
 function App() {
     return (
@@ -14,6 +15,9 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/createacc' element={<CreateAcc />} />
           <Route path='/home' element={<Home />} />
+          <Route path='/cart' element ={<Cart/>}/>
+          <Route path='/profilepage' element={<Profilepage/>}/>
+          
 
 
           
