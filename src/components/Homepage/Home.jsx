@@ -19,6 +19,7 @@ function Home() {
     <Navbar/>
     <Hero/>
     <Productsgrid addtocart={addtocart}/>
+    <Cart cartItem={cartItem} />
     </>
   )
 }

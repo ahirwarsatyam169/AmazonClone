@@ -2,12 +2,13 @@ import React from 'react'
 import Navbar from '../Homepage/Navbar';
 import Cartproduct from './Cartproduct';
 
-function Cart() {
+function Cart({cartItem}) {
 
   return (
     <>
     <Navbar/>
-    <Cartproduct/>
+    <Cartproduct cartItem={cartItem}/>
+    
 
     </>
   )

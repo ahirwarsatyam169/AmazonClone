@@ -1,33 +1,32 @@
 import React from 'react'
 import Productcard from './Productcard'
-import { useState } from 'react'
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
-function Productsgrid() {
-    const [products, setProducts] = useState([]); 
-    
-    useEffect(()=>{
+function Productsgrid({ addtocart }) {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
         fetch("https://dummyjson.com/products")
-        .then(res => res.json())
-        .then(data => setProducts(data.products))
-    },[])
-    console.log(products)
+            .then(res => res.json())
+            .then(data => setProducts(data.products))
+    }, [])
 
-  return (
-    <>
-    <div className='grid grid-cols-2 gap-4 m-2 md:grid-cols-5 sm:grid-cols-3'>
-        {products.slice(0, 50).map(products => (
-            <Productcard
-                
-                key={products.id}
-                title = {products.title}
-                price = {products.price}
-                thumbnail = {products.thumbnail}
-            />
-        ))}
-    </div>
-    </>
-  )
+    return (
+        <>
+            <div className='grid grid-cols-2 gap-4 m-2 md:grid-cols-5 sm:grid-cols-3'>
+                {products.slice(0, 30).map(product => (
+                    <Productcard
+                        key={product.id}
+                        title={product.title}
+                        price={product.price}
+                        thumbnail={product.thumbnail}
+                        product={product}
+                        addtocart={addtocart}
+                    />
+                ))}
+            </div>
+        </>
+    )
 }
 
-export default Productsgrid
+export default Productsgrid 

@@ -1,7 +1,9 @@
 import React from "react";
 
 
-function Productcard({title, price, thumbnail, Productcard}) {
+function Productcard({title, price, thumbnail, addtocart, product}) {
+  console.log(addtocart);
+  
   return (
     
       <div className="border rounded-xl p-2 flex flex-col">
@@ -18,7 +20,7 @@ function Productcard({title, price, thumbnail, Productcard}) {
 
         </div>
         <div className="h-[10%]">
-          <button className="bg-yellow-300 rounded-xl p-1 text-sm">Add to cart</button>
+          <button onClick={()=>addtocart(product)} className="bg-yellow-300 rounded-xl p-1 text-sm">Add to cart</button>
         </div>
       </div>
         
