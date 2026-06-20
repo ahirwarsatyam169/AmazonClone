@@ -1,9 +1,10 @@
 import React from 'react'
+import Navbar from '../Homepage/Navbar'
 
 function Profilepage() {
   return (
     <>
-    
+    <Navbar/>    
     <div>
       <h1 className='font-bold p-4 text-2xl'>
         Your Account
