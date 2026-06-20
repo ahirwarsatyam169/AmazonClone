@@ -6,7 +6,7 @@ import CreateAcc from './components/authentication/CreateAcc'
 import Home from './components/Homepage/Home'
 import Cart from './components/cart/cart'
 import Profilepage from './components/profile/Profilepage'
-import { useState } from 'react'
+import { useState} from 'react'
 
 function App() {
   const [cartItem, setcartItem] = useState([]);
@@ -32,7 +32,13 @@ function App() {
           path="/cart"
           element={<Cart cartItem={cartItem} />}
         />
+
+        <Route
+          path = "/profilepage"
+          element ={<Profilepage/>}        
+        />
       </Routes>
+
     </BrowserRouter>
   );
 }
