@@ -13,11 +13,18 @@ function App() {
 
   function addtocart(product) {
     setcartItem(prev => [...prev, product]);
+
   }
+  function removecartItem(productId){
+    setcartItem(prev => prev.filter(item => item.id !== productId))  
+  }  
 
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/login' element={<Login/>} />
+        <Route path='/signup' element={<Signup/>} />
+        <Route path='/createacc' element={<CreateAcc/>} />
         <Route
           path="/home"
           element={
@@ -30,7 +37,7 @@ function App() {
 
         <Route
           path="/cart"
-          element={<Cart cartItem={cartItem} />}
+          element={<Cart cartItem={cartItem} removecartItem={removecartItem } />}
         />
 
         <Route

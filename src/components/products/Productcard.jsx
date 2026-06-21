@@ -20,7 +20,7 @@ function Productcard({title, price, thumbnail, addtocart, product}) {
 
         </div>
         <div className="h-[10%]">
-          <button onClick={()=>addtocart(product)} className="bg-yellow-300 rounded-xl p-1 text-sm">Add to cart</button>
+          <button  onClick={()=>addtocart(product)} className="active:scale-90 bg-yellow-300 rounded-xl p-1 text-sm">Add to cart</button>
         </div>
       </div>
         

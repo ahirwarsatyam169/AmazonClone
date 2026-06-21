@@ -1,9 +1,7 @@
 import React from "react";
 
-function Cartproduct({ product, cartItem }) {
-  function removecartItem(){
-    
-  }  
+function Cartproduct({ product, cartItem, removecartItem }) {
+  console.log(removecartItem);
   const totalPrice = cartItem?.reduce((sum, item) => sum + item.price, 0);
   return (
     <>
@@ -31,7 +29,7 @@ function Cartproduct({ product, cartItem }) {
 
                   <p className="font-bold mt-2">${item.price}</p>
 
-                  <button className="mt-3 bg-red-500 text-white px-3 py-1 rounded">
+                  <button onClick={()=>removecartItem(item.id)} className="mt-3 bg-red-500 text-white px-3 py-1 rounded">
                     Remove
                   </button>
                 </div>
@@ -45,7 +43,7 @@ function Cartproduct({ product, cartItem }) {
 
             <div className="flex justify-between mb-2">
               <span>Items</span>
-              <span>{cartItem.length}</span>
+              <span>{cartItem?.length || 0}</span>
             </div>
 
             <div className="flex justify-between font-bold text-lg">
