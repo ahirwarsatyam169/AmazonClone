@@ -6,20 +6,14 @@ import { useState } from 'react'
 import Cart from '../cart/cart'
 
 
-function Home() {
-  const [cartItem, setcartItem] = useState([]);
-  
-  function addtocart(product){
-    setcartItem(prev => [...prev, product])
-  }
-  console.log(cartItem)
+function Home({addtocart}) {
+
 
   return (
     <>
     <Navbar/>
     <Hero/>
     <Productsgrid addtocart={addtocart}/>
-    <Cart cartItem={cartItem} />
     </>
   )
 }
