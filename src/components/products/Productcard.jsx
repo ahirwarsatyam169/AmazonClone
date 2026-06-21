@@ -6,7 +6,7 @@ function Productcard({title, price, thumbnail, addtocart, product}) {
   
   return (
     
-      <div className="border rounded-xl p-2 flex flex-col">
+      <div className=" rounded-xl p-2 flex flex-col bg-white">
         <img className="h-[60%]"
           src={thumbnail}
           alt=""

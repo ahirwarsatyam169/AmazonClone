@@ -29,7 +29,7 @@ function Cartproduct({ product, cartItem, removecartItem }) {
 
                   <p className="font-bold mt-2">${item.price}</p>
 
-                  <button onClick={()=>removecartItem(item.id)} className="mt-3 bg-red-500 text-white px-3 py-1 rounded">
+                  <button onClick={()=>removecartItem(item.id)} className="active:scale-90  mt-3 bg-red-500 text-white px-3 py-1 rounded">
                     Remove
                   </button>
                 </div>
@@ -48,10 +48,10 @@ function Cartproduct({ product, cartItem, removecartItem }) {
 
             <div className="flex justify-between font-bold text-lg">
               <span>Total</span>
-              <span>${totalPrice}</span>
+              <span>${totalPrice.toFixed(2)}</span>
             </div>
 
-            <button className="w-full mt-4 bg-yellow-400 hover:bg-yellow-500 py-2 rounded-lg font-semibold">
+            <button className="active:scale-95  w-full mt-4 bg-yellow-400 hover:bg-yellow-500 py-2 rounded-lg font-semibold">
               Proceed to Checkout
             </button>
           </div>
