@@ -22,7 +22,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="h-14 bg-[#131921]">
+      <nav className="h-14 bg-[#131921] sticky top-0 z-50">
         <div className="flex h-full justify-between ">
           <div className="flex h-full">
             <img className="scale-60" src={ham} alt="Menu" />
