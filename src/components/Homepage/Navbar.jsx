@@ -2,7 +2,8 @@ import React from "react";
 import logo from "../../assets/amazonlogo.png";
 import ham from "../../assets/hamburgermenu.png";
 import search from "../../assets/search.png";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function Navbar() {
   const gotocart = useNavigate();
@@ -18,6 +19,22 @@ function Navbar() {
   const gotoprofile = useNavigate();
   function redirectprofile(){
     gotoprofile("/profilepage")
+  }
+
+  const [searchproduct, setSearchproduct] = useState([]);
+  function resultProduct(){
+    setSearchproduct()
+  }
+
+  const searchbtn = useNavigate();
+  const searchdata = useLocation();
+
+  function gotosearch(){
+    searchbtn("/search",{
+      state:{
+        searchproduct :  searchproduct
+      }
+    })
   }
 
   return (
@@ -53,8 +70,12 @@ function Navbar() {
             className="p-2 font-bold w-[90%] border rounded-sm h-[45px]"
             type="text"
             placeholder="Search"
+            value={searchproduct}
+            onChange={(e)=>setSearchproduct( e.target.value)}
           />
           <img
+            onClick={gotosearch}
+
             className="absolute right-2 top-1/2 -translate-y-1/2 h-6"
             src={search}
             alt=""
